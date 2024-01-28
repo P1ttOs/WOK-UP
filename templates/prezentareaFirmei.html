@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}meniu{% endblock %}
+
+{% block content %}
+    <div id="image-container" class="text-center">
+        <img class="centered-image" src="/static/F.E._WOK_UP_S.R.L1.png" alt="Transparent Image" id="current-image">
+    </div>
+    <div id="image-buttons" class="text-center mt-3">
+        <button class="btn btn-primary" onclick="changeImage('prev')">&#8592</button>
+        <button class="btn btn-primary" onclick="changeImage('next')">&#8594;</button>
+    </div>
+
+    <div class="mt-5"></div> {# Add a margin to create space #}
+    
+    <script>
+        const images = ["/static/F.E._WOK_UP_S.R.L1.png", "/static/F.E._WOK_UP_S.R.L2.png", "/static/F.E._WOK_UP_S.R.L3.png", "/static/F.E._WOK_UP_S.R.L4.png", "/static/F.E._WOK_UP_S.R.L5.png", "/static/F.E._WOK_UP_S.R.L6.png", "/static/F.E._WOK_UP_S.R.L7.png", "/static/F.E._WOK_UP_S.R.L8.png", "/static/F.E._WOK_UP_S.R.L9.png", "/static/F.E._WOK_UP_S.R.L10.png", "/static/F.E._WOK_UP_S.R.L11.png", "/static/F.E._WOK_UP_S.R.L12.png", "/static/F.E._WOK_UP_S.R.L13.png", "/static/F.E._WOK_UP_S.R.L14.png", "/static/F.E._WOK_UP_S.R.L15.png", "/static/F.E._WOK_UP_S.R.L16.png", "/static/F.E._WOK_UP_S.R.L17.png", "/static/F.E._WOK_UP_S.R.L18.png", "/static/F.E._WOK_UP_S.R.L19.png", "/static/F.E._WOK_UP_S.R.L20.png", "/static/F.E._WOK_UP_S.R.L21.png", "/static/F.E._WOK_UP_S.R.L22.png", "/static/F.E._WOK_UP_S.R.L23.png", ];  // Add your image paths
+        let currentImageIndex = 0;
+
+        function changeImage(direction) {
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            } else if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            }
+
+            const currentImage = document.getElementById('current-image');
+            currentImage.src = images[currentImageIndex];
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}Acasa{% endblock %}
+
+{% block content %}
+    <video autoplay muted loop id="video-background">
+        <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img class="centered-image" src="/static/logo.png" alt="Transparent Image">
+    
+{% endblock %}

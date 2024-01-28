@@ -1,0 +1,56 @@
+.centered-image {
+    display: block;
+    margin: auto;
+    width: 85%; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other content */
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px; /* Adjust the margin as needed */
+}
+
+.contact-info-img,
+.second-row-img,
+.third-row-img,
+.fourth-row-img {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.navbar {
+  background-color: rgb(245, 199, 209) !important; /* Use !important to override Bootstrap styles */
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+  color: rgb(0, 0, 0) !important;
+}
+
+.navbar-toggler {
+   /* Adjust the z-index to a high value */
+  border: 2px solid black !important;
+  width: 80px;
+  background-color: blueviolet !important;
+}
+

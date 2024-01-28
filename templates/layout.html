@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- Link to your stylesheet using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-custom" style="background-color: rgb(245, 199, 209);">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-custom nav-link" href="/"><span style="color: rgb(0, 0, 0);">WOK</span> <span style="color: rgb(0, 0, 0);">UP</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('despreNoi') }}">Despre Noi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('meniu') }}">Meniu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('prezentareaFirmei') }}">Prezentarea firmei</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Your footer content here -->
+    <footer class="mb-5 small text-center">
+        <div class="contact-info">
+            <img class="contact-info-img" src="/static/phone-icon.png" alt="Phone Icon">
+            <span>123-456-7890</span>
+        </div>
+        <div class="second-row">
+            <img class="second-row-img" src="/static/mailLogo.png" alt="Second Logo">
+            <span>f.e.wokups.r.l@gmail.com</span>
+        </div>
+        <div class="third-row">
+            <img class="third-row-img" src="/static/instagramLogo.png" alt="Instagram Logo">
+            <span>@wok.up_11</span>
+        </div>
+        <div class="fourth-row">
+            <img class="fourth-row-img" src="/static/locationIcon.png" alt="Location Logo">
+            <span>Oradea. Calea Armatei Române nr 1F.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript and Popper.js -->
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+</body>
+</html>

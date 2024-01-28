@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}meniu{% endblock %}
+
+{% block content %}
+    <div id="image-container" class="text-center">
+        <img class="centered-image" src="/static/abc.jpg" alt="Transparent Image" id="current-image">
+    </div>
+    <div id="image-buttons" class="text-center mt-3">
+        <button class="btn btn-primary" onclick="changeImage('prev')">&#8592;</button>
+        <button class="btn btn-primary" onclick="changeImage('next')">&#8594;</button>
+    </div>
+
+    <div class="mt-5"></div> {# Add a margin to create space #}
+
+    <script>
+        const images = ["/static/abc.jpg", "/static/coffee2.jpg", "/static/alcoolice.jpg", "/static/non-alcoolice.jpg", "/static/răcoritoare.jpg", "/static/cakes.jpg", "/static/cakes2.jpg", "/static/sandwichuri.jpg" ];  // Add your image paths
+        let currentImageIndex = 0;
+
+        function changeImage(direction) {
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            } else if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            }
+
+            const currentImage = document.getElementById('current-image');
+            currentImage.src = images[currentImageIndex];
+        }
+    </script>
+{% endblock %}
